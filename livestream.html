@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+  <title>Blog | Σύνολο Αστικής Λαϊκής Μουσικής</title>
+
+  <!-- Loading third party fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+  <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Loading main css file -->
+  <link rel="stylesheet" href="style.css">
+
+  <!--[if lt IE 9]>
+  <script src="js/ie-support/html5.js"></script>
+  <script src="js/ie-support/respond.js"></script>
+  <![endif]-->
+
+  <!-- ====== Countdown styles (προσαρμοσμένα να “δένουν” με το θέμα) ====== -->
+  <style>
+    .countdown-wrap{
+      background:#111827; color:#e5e7eb; border-radius:14px; padding:16px 18px; margin:12px 0 24px;
+      box-shadow:0 10px 24px rgba(0,0,0,.25);
+    }
+    .countdown-title{ margin:0 0 6px; font-weight:700; font-size:22px; text-align:center; color:#ffffff; }
+    .countdown-sub{ margin:0 0 14px; text-align:center; color:#cbd5e1; }
+    .timer{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center; align-items:center;
+    }
+    .tbox{
+      background:#0f172a; border-radius:12px; padding:14px 18px; min-width:110px; text-align:center;
+    }
+    .tval{ font-size:36px; font-weight:800; line-height:1; color:#ffffff; }
+    .tlab{ margin-top:6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#94a3b8; }
+    .live-badge{
+      display:none; text-align:center; margin-top:14px; font-weight:800; color:#22c55e;
+    }
+    .progress{
+      height:6px; background:#1f2937; border-radius:99px; overflow:hidden; width:100%; max-width:680px;
+      margin:14px auto 0;
+    }
+    .progress > span{display:block; height:100%; width:0%; background:linear-gradient(90deg,#22c55e,#10b981);}
+    /* container του player: αρχικά κρυφό μέχρι να μηδενίσει το countdown */
+    #liveWrap{ display:none; }
+  </style>
+</head>
+<body>
+  <div id="site-content">
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" id="branding">
+          <img src="images/logo_circle_col_tran_let.png" width="200" height="120" alt="Site Title">
+          <small class="site-description"></small>
+        </a> <!-- #branding -->
+        <nav class="main-navigation">
+          <button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+          <ul class="menu">
+            <li class="menu-item"><a href="index.html">Αρχική</a></li>
+            <li class="menu-item"><a href="about.html">Σχετικά</a></li>
+            <li class="menu-item"><a href="gallery.html">Γκαλερί</a></li>
+            <!-- <li class="menu-item"><a href="download.html">Portofolio</a></li> -->
+            <li class="menu-item "><a href="blog.html">Blog</a></li>
+            <li class="menu-item"><a href="contact.html">Επικοινωνία</a></li>
+            <li class="menu-item current-menu-item"><a href="livestream.html">Live Stream</a></li>
+          </ul> <!-- .menu -->
+        </nav> <!-- .main-navigation -->
+        <div class="mobile-menu"></div>
+      </div>
+    </header> <!-- .site-header -->
+
+    <main class="main-content">
+      <div class="fullwidth-block inner-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="content">
+                <h2 class="entry-title">Live Streaming</h2>
+
+                <!-- ====== ΑΝΤΙΣΤΡΟΦΗ ΜΕΤΡΗΣΗ ====== -->
+                <section class="countdown-wrap" aria-live="polite" aria-label="Αντίστροφη μέτρηση για την έναρξη">
+                  <h3 class="countdown-title">Ξεκινάμε σύντομα!</h3>
+                  <p class="countdown-sub">Σάββατο <strong>21 Μαρτίου 2026</strong> – <strong>19:00</strong> (GMT+02:00)</p>
+                  <div class="timer">
+                    <div class="tbox"><div id="cd-d" class="tval">0</div><div class="tlab">Ημέρες</div></div>
+                    <div class="tbox"><div id="cd-h" class="tval">00</div><div class="tlab">Ώρες</div></div>
+                    <div class="tbox"><div id="cd-m" class="tval">00</div><div class="tlab">Λεπτά</div></div>
+                    <div class="tbox"><div id="cd-s" class="tval">00</div><div class="tlab">Δευτ.</div></div>
+                  </div>
+                  <div class="progress" aria-hidden="true"><span id="cd-bar"></span></div>
+                  <div id="liveBadge" class="live-badge">🔴 Είμαστε ζωντανά!</div>
+                </section>
+
+                <!-- ====== PLAYER: θα εμφανιστεί αυτόματα όταν μηδενίσει η μέτρηση ====== -->
+                <div id="liveWrap">
+                  <iframe
+                    src="https://player.livepush.io/live/emhtbWeZp8XCM_4h"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+
+                <!-- Αν θες ο player να φαίνεται από πριν, άλλαξε το CSS του #liveWrap (display:block) -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main> <!-- .main-content -->
+
+    <footer class="site-footer">
+      <div class="container">
+        <img src="images/logo_circle_col_tran.png" width="200" height="200" alt="Site Name">
+        <address>
+          <p>Δημοκρίτου & Περιφερειακή Οδός, 42100, Ριζαριό, Τρίκαλα <br><a href="tel:2431074471">(+30)2431074471</a> <br> <a href="mailto:a_tsironis@sch.gr">gymmtrik@sch.gr</a></p>
+        </address>
+        <!-- <form action="#" class="newsletter-form">
+          <input type="email" placeholder="Enter your email to join newsletter...">
+          <input type="submit" class="button cut-corner" value="Subscribe">
+        </form> --> <!-- .newsletter-form -->
+        <div class="social-links">
+          <a href="https://web.facebook.com/profile.php?id=61551633471393" target="_blank"><i class="fa fa-facebook-square"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.youtube.com/@UrbanEnsembleTrikala" target="_blank"><i class="fa fa-youtube"></i></a>
+          <!-- <a href="#"><i class="fa fa-pinterest"></i></a> -->
+        </div>
+        <p class="copy">Copyright 2023 Music School of Trikala. Designed by Avgeris Tsironis. All right reserved</p>
+      </div>
+    </footer> <!-- .site-footer -->
+  </div> <!-- #site-content -->
+
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/slideshow.js"></script>
+
+  <!-- ====== Countdown logic ====== -->
+  <script>
+    // Στόχος: Σάββατο 21 Μαρτίου 2026, 19:00 (ώρα Ελλάδας, GMT+02:00)
+    const CD_TARGET = new Date("2026-03-21T19:00:00+02:00").getTime();
+
+    const dEl = document.getElementById('cd-d');
+    const hEl = document.getElementById('cd-h');
+    const mEl = document.getElementById('cd-m');
+    const sEl = document.getElementById('cd-s');
+    const bar = document.getElementById('cd-bar');
+    const liveBadge = document.getElementById('liveBadge');
+    const liveWrap = document.getElementById('liveWrap');
+
+    function pad2(n){ return n.toString().padStart(2,'0'); }
+
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, CD_TARGET - now);
+
+      const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+      const hrs  = Math.floor(diff / 3600000);  diff -= hrs  * 3600000;
+      const mins = Math.floor(diff / 60000);    diff -= mins * 60000;
+      const secs = Math.floor(diff / 1000);
+
+      dEl.textContent = days;
+      hEl.textContent = pad2(hrs);
+      mEl.textContent = pad2(mins);
+      sEl.textContent = pad2(secs);
+
+      // Πρόοδος της τελευταίας ώρας πριν την έναρξη (οπτική ένδειξη)
+      const hourStart = CD_TARGET - 3600000; // 1 ώρα πριν
+      const progress = Math.min(1, Math.max(0, (now - hourStart) / 3600000));
+      bar.style.width = (progress * 100).toFixed(1) + '%';
+
+      // Τίτλος καρτέλας για εύκολο monitoring
+      document.title = (CD_TARGET > now)
+        ? `T-${days}δ ${pad2(hrs)}:${pad2(mins)}:${pad2(secs)} • Live Streaming`
+        : `🔴 Είμαστε ζωντανά!`;
+
+      // Όταν φτάσει η ώρα → δείξε player & μήνυμα, σταμάτα timer
+      if (CD_TARGET <= now){
+        liveWrap.style.display = 'block';
+        liveBadge.style.display = 'block';
+        clearInterval(timer);
+        // Προαιρετικό: κύλιση στον player όταν ανοίξει
+        setTimeout(()=> {
+          try { document.getElementById('liveWrap').scrollIntoView({behavior:'smooth', block:'start'}); } catch(e){}
+        }, 200);
+      }
+    }
+
+    const timer = setInterval(tick, 1000);
+    tick();
+  </script>
+</body>
+</html>

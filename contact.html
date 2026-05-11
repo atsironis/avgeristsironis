@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="el">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		
+		
+		<title>Contact</title>
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="style.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a href="index.html" id="branding">
+						<img  src="images/logo_circle_col_tran_let.png" width="200" 
+						height="120" alt="Site Title">
+						<small class="site-description"></small>
+					</a> <!-- #branding -->
+					
+					<nav class="main-navigation">
+						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="index.html">Αρχική</a></li>
+							<li class="menu-item"><a href="about.html">Σχετικά</a></li>
+							<li class="menu-item"><a href="gallery.html">Γκαλερί</a></li>
+							<!--<li class="menu-item"><a href="download.html">Portofolio</a></li>-->
+							<li class="menu-item"><a href="blog.html">Blog</a></li>
+							<li class="menu-item current-menu-item"><a href="contact.html">Επικοινωνία</a></li>
+						</ul> <!-- .menu -->
+					</nav> <!-- .main-navigation -->
+					<div class="mobile-menu"></div>
+				</div>
+			</header> <!-- .site-header -->
+			
+			<main class="main-content">
+				<div class="fullwidth-block inner-content">
+					<div class="container">
+						<h2 class="page-title">Επικοινωνήστε μαζί μας</h2>
+						<div class="row">
+							<div class="col-md-6">
+	<!-- Contact Form-->							
+    <iframe
+	id="JotFormIFrame-232706268483361"
+	title="urbanEnsemble"
+	onload="window.parent.scrollTo(0,0)"
+	allowtransparency="true"
+	allowfullscreen="true"
+	allow="geolocation; microphone; camera"
+	src="https://form.jotform.com/232706268483361"
+	frameborder="0"
+	style="min-width:100%;max-width:100%;height:539px;border:none;"
+	scrolling="no"
+  >
+  </iframe>
+  <script type="text/javascript">
+  var ifr = document.getElementById("JotFormIFrame-232706268483361");
+  if (ifr) {
+	var src = ifr.src;
+	var iframeParams = [];
+	if (window.location.href && window.location.href.indexOf("?") > -1) {
+	  iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+	}
+	if (src && src.indexOf("?") > -1) {
+	  iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+	  src = src.substr(0, src.indexOf("?"))
+	}
+	iframeParams.push("isIframeEmbed=1");
+	ifr.src = src + "?" + iframeParams.join('&');
+  }
+  window.handleIFrameMessage = function(e) {
+	if (typeof e.data === 'object') { return; }
+	var args = e.data.split(":");
+	if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+	if (!iframe) { return; }
+	switch (args[0]) {
+	  case "scrollIntoView":
+		iframe.scrollIntoView();
+		break;
+	  case "setHeight":
+		iframe.style.height = args[1] + "px";
+		if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
+		  iframe.style.minHeight = args[1] + "px";
+		}
+		break;
+	  case "collapseErrorPage":
+		if (iframe.clientHeight > window.innerHeight) {
+		  iframe.style.height = window.innerHeight + "px";
+		}
+		break;
+	  case "reloadPage":
+		window.location.reload();
+		break;
+	  case "loadScript":
+		if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+		var src = args[1];
+		if (args.length > 3) {
+			src = args[1] + ':' + args[2];
+		}
+		var script = document.createElement('script');
+		script.src = src;
+		script.type = 'text/javascript';
+		document.body.appendChild(script);
+		break;
+	  case "exitFullscreen":
+		if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+		else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+		else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+		else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+		else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+		break;
+	}
+	var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+	if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+	  var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+	  iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+	}
+  };
+  window.isPermitted = function(originUrl, whitelisted_domains) {
+	var url = document.createElement('a');
+	url.href = originUrl;
+	var hostname = url.hostname;
+	var result = false;
+	if( typeof hostname !== 'undefined' ) {
+	  whitelisted_domains.forEach(function(element) {
+		  if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
+			  result = true;
+		  }
+	  });
+	  return result;
+	}
+  };
+  if (window.addEventListener) {
+	window.addEventListener("message", handleIFrameMessage, false);
+  } else if (window.attachEvent) {
+	window.attachEvent("onmessage", handleIFrameMessage);
+  }
+  </script>
+								<!--<form action="mail_handler.php"  method = "post" class="contact-form" target="_blank">
+									<input type="text" name  = "first_name" placeholder="Όνομα...">
+									<input type="text" name  = "last_name" placeholder="Επώνυμο...">
+									<input type="text" name = "email" placeholder="Διεύθυνση Email...">
+									<input type="text" name = "subject" placeholder="Θέμα...">
+									<textarea name="message" placeholder="Μήνυμα..."></textarea>
+									<input type="submit" name = "submit" value="Send message">
+								</form>-->
+							</div>
+							<div class="col-md-6">
+								<div class="map-wrapper">
+									<div ><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6153.346727355786!2d21.798003000000005!3d39.544422!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3921da44d710ab6!2sMusic%20School%20Trikala!5e0!3m2!1sen!2sus!4v1674069260709!5m2!1sen!2sus" width="454" height="393" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+									<address>
+										<div class="row">
+											<div class="col-sm-6">
+												<strong>Μουσικό Σχολείο Τρικάλων</strong>
+												<span>Δημοκρίτου & Περιφερειακή Οδός,
+													42100, Ριζαριό, Τρίκαλα</span>
+											</div>
+											<div class="col-sm-6">
+												<a href="mailto:gymmtrik@sch.gr">gymmtrik@sch.gr</a> <br>
+												<a href="tel:2431074471">(+30)2431074471</a>
+											</div>
+										</div>
+									</address>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- .testimonial-section -->
+
+				
+			</main> <!-- .main-content -->
+
+			<<footer class="site-footer">
+				<div class="container">
+					<img src="images/logo_circle_col_tran.png" width="200" 
+					height="200"alt="Site Name">
+					
+					<address>
+						<p>Δημοκρίτου & Περιφερειακή Οδός,
+							42100, Ριζαριό, Τρίκαλα <br><a href="tel:2431074471">(+30)2431074471</a> <br> <a href="mailto:a_tsironis@sch.gr">gymmtrik@sch.gr</a></p> 
+					</address> 
+					
+					<!--<form action="#" class="newsletter-form">
+						<input type="email" placeholder="Enter your email to join newsletter...">
+						<input type="submit" class="button cut-corner" value="Subscribe">
+					</form>-->
+					
+					<div class="social-links">
+						<a href="https://web.facebook.com/profile.php?id=61551633471393" target="_blank"><i class="fa fa-facebook-square"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.youtube.com/@UrbanEnsembleTrikala" target="_blank"><i class="fa fa-youtube"></i></a>
+						<!--<a href="#"><i class="fa fa-pinterest"></i></a>-->
+					</div> 
+					
+					<p class="copy">Copyright 2023 Music School of Trikala. Designed by Avgeris Tsironis. All right reserved</p>
+				</div>
+			</footer> <!-- .site-footer -->
+
+		</div> <!-- #site-content -->
+		<script src="js/jquery-1.11.1.min.js"></script>	
+		<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>	
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+		
+	</body>
+
+</html>
